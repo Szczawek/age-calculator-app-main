@@ -1,0 +1,144 @@
+::after,
+::before,
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-white: hsl(0, 0%, 100%);
+  --primary-red: hsl(0, 100%, 67%);
+  --body-bgc: hsl(0, 0%, 94%);
+  --dark-gray: hsl(0, 1%, 44%);
+  --light-gray: hsl(0, 0%, 86%);
+  --primary-black: hsl(0, 0%, 8%);
+  --primary-purple: hsl(259, 100%, 65%);
+}
+
+html {
+  color-scheme: light dark;
+}
+
+img,
+input,
+button,
+span {
+  display: block;
+}
+img {
+  max-width: 100%;
+}
+input {
+  outline: none;
+  border: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+body {
+  background-color: var(--body-bgc);
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  max-width: 900px;
+  width: 90vw;
+  display: grid;
+  row-gap: 2rem;
+  padding: 3.5rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1.5rem 1.5rem 9.5rem 1.5rem;
+}
+
+/* Section of inputs setting the time that has passed between two dates */
+.input-data {
+  position: relative;
+  border-bottom: 2px solid var(--body-bgc);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(1.5rem, 8rem));
+  column-gap: 5%;
+  padding-bottom: 3rem;
+  color: var(--dark-gray);
+}
+
+.input-data label {
+  font-size: 0.8rem;
+  display: grid;
+  row-gap: 0.6rem;
+}
+.input-data input {
+  font-weight: 800;
+  padding: 0.8rem;
+  width: 100%;
+  font-size: clamp(0.9rem, 1.3vw, 2rem);
+  color: var(--primary-black);
+  background-color: var(--primary-white);
+  transition: border-color 300ms;
+  border-radius: 0.4rem;
+  border: 2px solid var(--light-gray);
+}
+.input-data input:hover {
+  border-color: var(--primary-purple);
+}
+
+.input-data button {
+  background-color: var(--primary-purple);
+  border-radius: 50%;
+  width: 5rem;
+  right: 0;
+  display: grid;
+  place-content: center;
+  padding: 0.8rem;
+  bottom: -2.25rem;
+  position: absolute;
+  aspect-ratio: 1/1;
+  transition: background-color 300ms;
+}
+
+.input-data button:hover {
+  background-color: var(--primary-black);
+}
+/* Outgoing data */
+.content {
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 8rem);
+}
+.content div {
+  display: flex;
+  column-gap: 2%;
+}
+.content p {
+  color: var(--primary-black);
+}
+.content span {
+  color: var(--primary-purple);
+}
+
+@media (width < 720px) {
+
+  main {
+    border-radius: 1.5rem 1.5rem 6.5rem 1.5rem;
+    padding: 1.5rem;
+  }
+  .input-data input {
+    padding: .5rem;
+  }
+  .input-data button {
+    width: 3rem;
+    bottom: -1.5rem;
+    right: calc(50% - 1.5rem);
+  }
+}
